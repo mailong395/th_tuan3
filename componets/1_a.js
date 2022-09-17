@@ -4,17 +4,10 @@ import {
   Text,
   View,
   Image,
-  Button,
-  TouchableOpacity,
 } from "react-native";
+import ButtonCustom from "./buttoncustom";
 
-const AppButton = ({ onPress, title }) => (
-  <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
-    <Text style={styles.appButtonText}>{title}</Text>
-  </TouchableOpacity>
-);
-
-export default function ScreenA1() {
+export default function Screen1A() {
   return (
     <ImageBackground
       style={styles.main}
@@ -33,8 +26,13 @@ export default function ScreenA1() {
         </Text>
       </View>
       <View style={styles.listButton}>
-        <AppButton title="Login" />
-        <AppButton title="Sign Up" />
+        <View style={styles.button}>
+            <ButtonCustom title={"Login"}/>
+        </View>
+        <View style={styles.button}>
+            <ButtonCustom title={"Sign Up"}/>
+        </View>
+        
       </View>
       <View style={styles.footer}>
         <Text style={styles.textFooter}>HOW WE WORK?</Text>
@@ -75,22 +73,11 @@ const styles = StyleSheet.create({
   listButton: {
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-evenly",
     alignItems: "center",
   },
-  appButtonContainer: {
-    backgroundColor: "#E3C000",
-    width: 125,
-    height: 45,
-    justifyContent: "center",
-    alignContent: "center",
-  },
-  appButtonText: {
-    fontSize: 18,
-    color: "#000",
-    fontWeight: "bold",
-    alignSelf: "center",
-    textTransform: "uppercase",
+  button: {
+    flex: 1,
+    marginHorizontal: 30
   },
   footer: {
     flex: 1,
@@ -100,6 +87,6 @@ const styles = StyleSheet.create({
   textFooter: {
     textAlign: "center",
     fontSize: 18,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
 });
