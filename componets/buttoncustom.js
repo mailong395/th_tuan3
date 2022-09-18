@@ -1,9 +1,9 @@
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
 
 
-export default function ButtonCustom({title, onPress, width, height}) {
+export default function ButtonCustom({title, onPress, width, height, backgroundColor}) {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.appButtonContainer} width={width} height={height}>
+    <TouchableOpacity onPress={onPress} style={styles.appButtonContainer} width={width} height={height} backgroundColor={backgroundColor}>
       <Text style={styles.appButtonText}>{title}</Text>
     </TouchableOpacity>
   );
